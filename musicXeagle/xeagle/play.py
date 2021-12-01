@@ -442,7 +442,7 @@ async def m_cb(b, cb):
                     chet_id, 
                     queues.get(chet_id)["file"],
                 )
-                await cb.answer.reply_text("✅ <b>Skipped</b>")
+                await cb.answer.reply_text("✅ <b> req yg bener ngentd</b>")
                 await cb.message.edit((m_chat, qeue), reply_markup=r_ply(the_data))
                 await cb.message.reply_text(
                     f"- Skipped track\n- Now Playing **{qeue[0][0]}**"
@@ -480,7 +480,7 @@ async def play(_, message: Message):
     global useer
     if message.chat.id in DISABLED_GROUPS:
         return
-    lel = await message.reply("🔄 <b>Processing</b>")
+    lel = await message.reply("🔄 <b>Genos Mencari</b>")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
