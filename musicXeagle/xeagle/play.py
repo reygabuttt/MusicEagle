@@ -1061,7 +1061,7 @@ async def jiosaavn(client: Client, message_: Message):
             ],
             [
                 InlineKeyboardButton(
-                    text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/EagleSupport"
+                    text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/GenoosSupport"
                 )
             ],
             [InlineKeyboardButton(text="ᴄʟᴏsᴇ", callback_data="cls")],
@@ -1145,7 +1145,7 @@ async def lol_cb(b, cb):
             "You ain't the person who requested to play the song!", show_alert=True
         )
         return
-    await cb.message.edit("Hang On... Player Starting")
+    await cb.message.edit("Sabar jancok !")
     x = int(x)
     try:
         useer_name = cb.message.reply_to_message.from_user.first_name
