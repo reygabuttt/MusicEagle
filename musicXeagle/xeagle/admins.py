@@ -38,7 +38,7 @@ async def update_admin(client, message: Message):
             for member in await message.chat.get_members(filter="administrators")
         ],
     )
-    await message.reply_text("👤 Admin cache refreshed!")
+    await message.reply_text("👤 Admin cache Genos reflesh ✅")
 
 
 @Client.on_message(command("pause") & other_filters)
@@ -51,7 +51,7 @@ async def pause(_, message: Message):
     ) if (
         callsmusic.pause(chat_id)
     ) else (
-        await message.reply_text("❗ Nothing is playing!")
+        await message.reply_text(" Tidak ada Yg memutar !")
     )
         
 
@@ -66,7 +66,7 @@ async def resume(_, message: Message):
     ) if (
         callsmusic.resume(chat_id)
     ) else (
-        await message.reply_text("❗ Nothing is paused!")
+        await message.reply_text("🍁 Nothing is paused!")
     )
         
 
@@ -77,7 +77,7 @@ async def resume(_, message: Message):
 async def stop(_, message: Message):
     chat_id = get_chat_id(message.chat)
     if chat_id not in callsmusic.active_chats:
-        await message.reply_text("❗ Nothing is streaming!")
+        await message.reply_text("🗿 Nothing is streaming!")
     else:
         try:
             queues.clear(chat_id)
@@ -85,7 +85,7 @@ async def stop(_, message: Message):
             pass
 
         await callsmusic.stop(chat_id)
-        await message.reply_text("❌ Stopped streaming!")
+        await message.reply_text("⚡ Req Yg Bener Bgsd!🗿")
 
 
 @Client.on_message(command("skip") & other_filters)
@@ -95,7 +95,7 @@ async def skip(_, message: Message):
     global que
     chat_id = get_chat_id(message.chat)
     if chat_id not in callsmusic.active_chats:
-        await message.reply_text("❗ Nothing is playing to skip!")
+        await message.reply_text("⚡ Nothing is playing to skip!")
     else:
         queues.task_done(chat_id)
         if queues.is_empty(chat_id):
@@ -118,15 +118,15 @@ async def mute(_, message: Message):
     chat_id = get_chat_id(message.chat)
     result = await callsmusic.mute(chat_id)
     (
-        await message.reply_text("✅ Muted")
+        await message.reply_text("Mampus ✅ Muted")
     ) if (
         result == 0
     ) else (
-        await message.reply_text("❌ Already muted")
+        await message.reply_text(" Mampus Bisu")
     ) if (
         result == 1
     ) else (
-        await message.reply_text("❌ Not in call")
+        await message.reply_text("🤙 Not in call")
     )
 
         
@@ -141,11 +141,11 @@ async def unmute(_, message: Message):
     ) if (
         result == 0
     ) else (
-        await message.reply_text("❌ Not muted")
+        await message.reply_text("🙂 Gw Baek kan Sama lo")
     ) if (
         result == 1
     ) else (
-        await message.reply_text("❌ Not in call")
+        await message.reply_text("🤙 Not in call")
     )
 
 
@@ -159,4 +159,4 @@ async def admincache(client, message: Message):
             for member in await message.chat.get_members(filter="administrators")
         ],
     )
-    await message.reply_text("👤 Admin cache refreshed!")
+    await message.reply_text("👤 Admin cache Genos reflesh ✅")
