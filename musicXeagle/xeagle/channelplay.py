@@ -109,7 +109,7 @@ def r_ply(type_):
             [
                 InlineKeyboardButton("Playlist 📖", "cplaylist"),
             ],
-            [InlineKeyboardButton("❌ Close", "ccls")],
+            [InlineKeyboardButton("Genos Close", "ccls")],
         ]
     )
     return mar
@@ -319,7 +319,7 @@ async def m_cb(b, cb):
                 await cb.message.edit("- No More Playlist..\n- Leaving VC!")
             else:
                 await callsmusic.set_stream(chet_id, queues.get(chet_id)["file"])
-                await cb.answer.reply_text("✅ <b>Skipped</b>")
+                await cb.answer.reply_text("✅ <b>Req yg bener kntl</b>")
                 await cb.message.edit((m_chat, qeue), reply_markup=r_ply(the_data))
                 await cb.message.reply_text(
                     f"- Skipped track\n- Now Playing **{qeue[0][0]}**"
@@ -344,7 +344,7 @@ async def m_cb(b, cb):
 @authorized_users_only
 async def play(_, message: Message):
     global que
-    lel = await message.reply("🔄 <b>Processing</b>")
+    lel = await message.reply("🔄 <b>Genos Mencari</b>")
 
     try:
         conchat = await _.get_chat(message.chat.id)
@@ -406,7 +406,7 @@ async def play(_, message: Message):
         )
         return
     text_links = None
-    await lel.edit("🔎 <b>Finding</b>")
+    await lel.edit("🔎 <b>Genos Mencari</b>")
     if message.reply_to_message:
         if message.reply_to_message.audio:
             pass
@@ -475,7 +475,7 @@ async def play(_, message: Message):
         )
     elif urls:
         query = toxt
-        await lel.edit("🎵 **Processing**")
+        await lel.edit("🎵 **Genos Mencari**")
         ydl_opts = {"format": "bestaudio/best"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
